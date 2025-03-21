@@ -1,6 +1,6 @@
 // src/router/Router.tsx
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import LoginPage from "../pages/LoginPage";
@@ -10,7 +10,7 @@ const RouterProvider: React.FC = () => {
   const { token } = useSelector((state: RootState) => state.auth);
 
   return (
-    <BrowserRouter basename="/pryaniky_test">
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -26,7 +26,7 @@ const RouterProvider: React.FC = () => {
         />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
