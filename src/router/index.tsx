@@ -10,7 +10,7 @@ const RouterProvider: React.FC = () => {
   const { token } = useSelector((state: RootState) => state.auth);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/pryaniky_test">
       <Routes>
         <Route
           path="/"
